@@ -14,7 +14,7 @@ Installation
 Add spree_store_locator to your Gemfile:
 
 ```ruby
-gem 'spree_store_locator'
+gem 'spree_store_locator',  github: 'fruqi/spree_store_locator
 ```
 
 Bundle your dependencies and run the installation generator:

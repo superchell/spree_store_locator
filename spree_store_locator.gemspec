@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.description = 'Show your customer where do you sell easily'
   s.required_ruby_version = '>= 1.9.3'
 
-   s.author    = 'Amrta Faruq'
+   s.author    = 'Amrta Faruqi'
    s.email     = 'amrta.faruqi@gmail.com'
-   s.homepage  = 'ruqi.com'
+   
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
