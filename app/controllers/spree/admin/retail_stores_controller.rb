@@ -8,6 +8,10 @@ module Spree
         @store  = Spree::RetailStore.new
       end
 
+      def edit
+        
+      end
+
       def create
         @store = Spree::RetailStore.new store_params
 

@@ -1,9 +1,6 @@
-
-
-
 <%= form_for @store, url: admin_retail_store_path(@store.id), method: :patch do |f| %>
   <fieldset>
     <legend style="align: center;">Edit Store</legend>
-    <%= render patial: 'form', locals: { f: f } %>
+    <%= render partial: 'form', locals: { f: f } %>
   </fieldset>
 <% end %>
