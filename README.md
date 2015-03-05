@@ -14,7 +14,7 @@ Installation
 Add spree_store_locator to your Gemfile:
 
 ```ruby
-gem 'spree_store_locator',  github: 'fruqi/spree_store_locator
+gem 'spree_store_locator',  github: 'NoelDiazMesa/spree_store_locator' , branch: 'master'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -80,8 +80,5 @@ Contributing
 Pull Requests are more than welcome!. If needed, make sure you add
 tests :)
 
-About the Author
-----------------
 
-Crowd Interactive is an American web design and development company that happens to work in Colima, Mexico. We specialize in building and growing online retail stores. We don’t work with everyone – just companies we believe in. Call us today to see if there’s a fit.
 
