@@ -17,4 +17,3 @@ class CreateSpreeStores < ActiveRecord::Migration
     end
   end
 end
-
