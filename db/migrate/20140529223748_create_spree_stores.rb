@@ -1,6 +1,6 @@
-class CreateSpreeRetailStores < ActiveRecord::Migration
+class CreateSpreeStores < ActiveRecord::Migration
   def change
-    create_table :spree_retail_stores do |t|
+    create_table :spree_stores do |t|
       t.string :address1,  null: false, default: ''
       t.string :address2
       t.string :city,      null: false, default: ''
