@@ -9,3 +9,4 @@ gem 'sprockets', '<= 2.11.0'
 gem 'spree', :github => 'spree/spree', :branch => '2-4-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-4-stable'
 gemspec
+
