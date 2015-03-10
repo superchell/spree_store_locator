@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= store_locator.name %>
+  </td>
+  <td>
+    <%= store_locator.city %>
+  </td>
+  <td>
+    <%= store_locator.state %>
+  </td>
+  <td class="actions">
+    <%= link_to_edit store_locator, url: edit_admin_store_locator_path(store_locator.id), no_text: true, class: 'edit' %>
+    &nbsp;
+    <%= link_to_delete store_locator, url: admin_store_locator_path(store_locator.id), no_text: true, method: 'delete' %>
+  </td>
+</tr>

@@ -1,0 +1,40 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:'store_locator.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:'store_locator.new'), new_admin_store_locator_url, :class => "btn-success", :icon => 'add', :id => 'admin_new_store_locator_link' %>
+<% end %>
+
+<%= render partial: 'spree/admin/shared/index_table_options', locals: { collection: @store_locators } %>
+
+<% if @store_locators.any? %>
+  <table class="table" id="listing_store_locators">
+    <thead>
+      <tr data-hook="admin_store_locators_index_headers">
+        <th><%= Spree.t(:name) %></th>
+        <th><%= Spree.t(:city) %></th>
+        <th><%= Spree.t(:state) %></th>
+        <th data-hook="admin_store_locators_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @store_locators.each do |store_locator| %>
+          <tr id="<%= spree_dom_id store_locator %>" data-hook="admin_store_locators_index_rows" class="<%= cycle('odd', 'even') %>">
+            <td><%= store_locator.name %></td>
+            <td><%= store_locator.city %></td>
+            <td><%= store_locator.state %></td>
+            <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
+              <%= link_to_edit store_locator, no_text: true, class: 'edit' if can?(:edit, store_locator) %>
+              <%= link_to_delete store_locator, no_text: true if can?(:delete, store_locator) %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-info no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::StoreLocator)) %>,
+    <%= link_to Spree.t(:add_one), new_object_url %>!
+  </div>
+<% end %>

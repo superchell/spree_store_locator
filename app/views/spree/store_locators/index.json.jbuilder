@@ -1,4 +1,4 @@
-json.array! @stores do |store|
+json.array! @store_locators do |store|
   json.id       store.id
   json.name     store.name
   json.lat      store.latitude
