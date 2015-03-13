@@ -51,7 +51,8 @@ module Spree
           :phone,
           :state,
           :website,
-          :zip
+          :zip,
+          translations_attributes: [:id, :locale, :name, :address1, :address2, :city, :state, :zip, :country]
       )
     end
   end

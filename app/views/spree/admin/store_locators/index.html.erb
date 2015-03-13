@@ -21,7 +21,7 @@
     <tbody>
       <% @store_locators.each do |store_locator| %>
           <tr id="<%= spree_dom_id store_locator %>" data-hook="admin_store_locators_index_rows" class="<%= cycle('odd', 'even') %>">
-            <td><%= store_locator.name %></td>
+            <td><%= link_to store_locator.name, edit_admin_store_locator_url(store_locator) %></td>
             <td><%= store_locator.city %></td>
             <td><%= store_locator.state %></td>
             <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
