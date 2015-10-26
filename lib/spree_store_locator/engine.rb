@@ -5,12 +5,12 @@ module SpreeStoreLocator
     engine_name 'spree_store_locator'
 
     config.autoload_paths += %W(#{config.root}/lib)
-    
+
     # use rspec for tests
     config.generators do |g|
       g.test_framework :rspec
     end
-    
+
     # initializer "spree_store_locator.permitted_attributes", before: :load_config_initializers do |app|
     #   store_locator_attributes = { translations_attributes: [:id, :locale, :name, :address1, :address2, :city, :state, :zip, :country] }
     #   Spree::PermittedAttributes::ATTRIBUTES << :store_locator_attributes

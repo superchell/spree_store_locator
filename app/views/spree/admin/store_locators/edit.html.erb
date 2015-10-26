@@ -2,8 +2,6 @@
   <%= @store_locator.name %>
 <% end %>
 
-<%= render 'spree/admin/shared/store_locator_tabs', current: 'Store Locator Details' %>
-
 <%= form_for @store_locator, url: admin_store_locator_path(@store_locator.id), method: :patch do |f| %>
   <fieldset>
     <%= render partial: 'form', locals: { f: f } %>
