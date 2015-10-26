@@ -5,11 +5,11 @@ module Spree
       load_store_locators
       @store_locator = Spree::StoreLocator.new
     end
-    
+
     def new
       @store_locator = Spree::StoreLocator.new
     end
-    
+
     def create
       @store_locator = Spree::StoreLocator.new store_params
       if @store_locator.save
@@ -51,8 +51,7 @@ module Spree
           :phone,
           :state,
           :website,
-          :zip,
-          translations_attributes: [:id, :locale, :name, :address1, :address2, :city, :state, :zip, :country]
+          :zip]
       )
     end
   end
