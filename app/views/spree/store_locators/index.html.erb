@@ -1,21 +1,26 @@
-<div id="store-locator-container">
+<div class="bh-sl-container">
   <div id="page-header">
-    <h2>Store Locator</h2>
+    <h2><%= Spree.t(:our_stores) %></h2>
   </div>
-  <div id="form-container">
-    <form action="#" id="user-location" class="form-inline" method="post">
+  <div class="bh-sl-form-container">
+    <form id="bh-sl-user-location" class="form-inline" method="post" action="#" role="form">
       <div class="form-input form-group">
-        <label for="address">Enter Address or Zip Code:</label>
-        <input id="address" class="form-control" name="address" type="text"></input>
+        <label for="bh-sl-address"><%= Spree.t(:enter_address) %></label>
+        <input class="form-control" type="text" id="bh-sl-address" name="bh-sl-address" />
       </div>
-      <button id="submit" class="btn btn-primary" type="submit">Submit</button>
+
+      <button id="bh-sl-submit" class="btn btn-primary" type="submit"><%= Spree.t(:submit) %></button>
     </form>
   </div>
-  <div id="map-container">
-    <div id="loc-list" class="col-md-3">
-      <ul id="list"></ul>
+  <div id="map-container" class="bh-sl-map-container">
+    <div class="row">
+      <div id="map-results-container" class="container">
+        <div id="bh-sl-map" class="bh-sl-map col-md-9"></div>
+        <div class="bh-sl-loc-list col-md-3">
+          <ul class="list list-unstyled"></ul>
+        </div>
+      </div>
     </div>
-    <div id="map" class="col-md-9"></div>
   </div>
 </div>
 <% # jQuery Store Locator assets %>
@@ -27,7 +32,8 @@
     return $('#map-container').storeLocator({
       dataType: 'json',
       dataLocation: '/store_locator.json',
-      lengthUnit: 'km'
+      lengthUnit: 'km',
+      callbackNotify: bootstrap_alert.warning
     });
   });
 </script>

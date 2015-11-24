@@ -17,6 +17,20 @@ es:
         zipcode: Código Postal
         website: Página web
   spree:
+    actions:
+      submit: Enviar
+    address_error_alert: "No es posible encontrar dirección"
+    directions: Direcciones
+    distance_error_alert: "La ubicación mas cercana está a "
+    enter_address: Ingrese dirección
+    kilometer: Kilometro
+    kilometers: Kilometros
+    mile: Milla
+    miles: Millas
+    next: "&rsaquo;"
+    no_results: Sin resultados
+    our_stores: Nuestras Tiendas
+    prev: "&lsaquo;"
     store_locator:
       title: Tiendas Fisicas
       menu: Tiendas Fisicas
