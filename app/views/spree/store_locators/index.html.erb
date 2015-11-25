@@ -9,7 +9,7 @@
         <input class="form-control" type="text" id="bh-sl-address" name="bh-sl-address" />
       </div>
 
-      <button id="bh-sl-submit" class="btn btn-primary" type="submit"><%= Spree.t(:submit) %></button>
+      <button id="bh-sl-submit" class="btn btn-primary" type="submit"><%= Spree.t("actions.continue") %></button>
     </form>
   </div>
   <div id="map-container" class="bh-sl-map-container">
@@ -33,7 +33,11 @@
       dataType: 'json',
       dataLocation: '/store_locator.json',
       lengthUnit: 'km',
-      callbackNotify: bootstrap_alert.warning
+      callbackNotify: bootstrap_alert.warning,
+      defaultLoc: true,
+      defaultLat: -33.4384215,
+      defaultLng: -70.652068,
+      slideMap: false
     });
   });
 </script>
