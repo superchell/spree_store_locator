@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Admin::StoresController do
+describe Spree::Admin::StoreLocatorsController do
   render_views
   stub_authorization!
 

@@ -39,7 +39,7 @@ module Spree
       @store_locators = Spree::StoreLocator.state_ordered.page(params[:page]).per(per_page)
     end
     def find_store_locator
-      @store_locator = Spree::StoreLocator.find_by id: params[:id]
+      @store_locator = Spree::StoreLocator.friendly.find params[:id]
     end
     def store_params
       params.require(:store_locator).permit(

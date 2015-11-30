@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Spree::Store do
+describe Spree::StoreLocator do
   context 'with invalid params' do
-    let(:subject) { FactoryGirl.create :spree_store }
+    let(:subject) { FactoryGirl.create :spree_store_locator }
 
     before do
       subject.address1 = ''
