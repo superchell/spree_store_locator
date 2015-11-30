@@ -3,6 +3,6 @@ Spree::Core::Engine.routes.draw do
     resources :store_locators, except: :show
   end
 
-  resources :store_locators, only: :index, path: :store_locator
+  resources :store_locators, only: [:index, :show], path: :store_locator
 end
 

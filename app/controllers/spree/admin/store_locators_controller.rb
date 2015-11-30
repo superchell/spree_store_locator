@@ -52,6 +52,7 @@ module Spree
           :address2,
           :city,
           :country,
+          :image,
           :name,
           :phone,
           :state,

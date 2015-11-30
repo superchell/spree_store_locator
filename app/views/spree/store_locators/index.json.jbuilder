@@ -9,5 +9,7 @@ json.array! @store_locators do |store|
   json.state    store.state
   json.postal   store.zip
   json.web      store.website
+  json.image    store.image.url(:thumb)
+  json.url      store_locator_url(store)
 end
 

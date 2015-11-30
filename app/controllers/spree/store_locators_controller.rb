@@ -5,7 +5,7 @@ module Spree
     end
 
     def show
-      @store_location = Spree::StoreLocator.find(params[:id])
+      @store_location = Spree::StoreLocator.friendly.find(params[:id])
     end
   end
 end
