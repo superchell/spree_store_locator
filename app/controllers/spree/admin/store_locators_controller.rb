@@ -1,6 +1,7 @@
 module Spree
   class Admin::StoreLocatorsController < Admin::ResourceController
     before_action :find_store_locator, only: [:edit, :update, :destroy]
+
     def index
       load_store_locators
       @store_locator = Spree::StoreLocator.new
@@ -19,10 +20,12 @@ module Spree
         render :new
       end
     end
+
     def update
       @store_locator.update_attributes store_params
       redirect_to admin_store_locators_path
     end
+
     def destroy
       @store_locator.destroy
 
@@ -33,14 +36,18 @@ module Spree
         format.js  { render_js_for_destroy }
       end
     end
+
     private
+
     def load_store_locators
       per_page = params[:per_page] || 20
       @store_locators = Spree::StoreLocator.state_ordered.page(params[:page]).per(per_page)
     end
+
     def find_store_locator
       @store_locator = Spree::StoreLocator.friendly.find params[:id]
     end
+
     def store_params
       params.require(:store_locator).permit(
           :address1,

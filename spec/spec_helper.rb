@@ -24,9 +24,10 @@ require 'ffaker'
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
 # Requires factories defined in spree_core
-require 'spree/testing_support/factories'
-require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
+require 'spree/testing_support/capybara_ext'
+require 'spree/testing_support/controller_requests'
+require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_store_locator/factories.rb
@@ -34,6 +35,9 @@ require 'spree_store_locator/factories'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, type: :controller
+  # Infer an example group's spec type from the file location.
+  config.infer_spec_type_from_file_location!
 
   # == URL Helpers
   #
@@ -41,9 +45,9 @@ RSpec.configure do |config|
   #
   # visit spree.admin_path
   # current_path.should eql(spree.products_path)
+  config.include Spree::TestingSupport::ControllerRequests, type: :controller
   config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::ControllerRequests
-  config.include Devise::TestHelpers, type: :controller
+  config.include Spree::TestingSupport::AuthorizationHelpers
 
   # == Mock Framework
   #
@@ -71,7 +75,7 @@ RSpec.configure do |config|
 
   # Before each spec check if it is a Javascript test and switch between using database transactions or not where necessary.
   config.before :each do
-    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
 
