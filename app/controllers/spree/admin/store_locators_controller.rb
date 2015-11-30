@@ -1,7 +1,5 @@
 module Spree
   class Admin::StoreLocatorsController < Admin::ResourceController
-    before_action :find_store_locator, only: [:edit, :update, :destroy]
-
     def index
       load_store_locators
       @store_locator = Spree::StoreLocator.new
@@ -44,7 +42,7 @@ module Spree
       @store_locators = Spree::StoreLocator.state_ordered.page(params[:page]).per(per_page)
     end
 
-    def find_store_locator
+    def find_resource
       @store_locator = Spree::StoreLocator.friendly.find params[:id]
     end
 
