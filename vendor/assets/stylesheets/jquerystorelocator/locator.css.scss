@@ -1,212 +1,248 @@
-#page-header {
-  float: left;
-}
-
-#store-locator-container {
-  color: #333;
-  float: left;
-  font: normal 12px Arial,Helvetica,sans-serif;
-  margin-left: 20px;
-  width: 875px;
-
-  #form-container {
-    clear: left;
-    float: left;
-    margin-top: 15px;
-    width: 100%;
-  }
-
-  #map-container {
-    clear: left;
-    float: left;
-    height: 530px;
-    margin-top: 27px;
-    width: 875px;
-
-    a {
-      color: #e76737;
-      text-decoration: none;
-
-      &:hover, &:active {
-        text-decoration: underline;
-      }
-    }
-
-    .custom-marker {
-      color: #fff;
-      cursor: pointer;
-      height: 37px;
-      padding: 3px;
-      width: 32px;
-    }
-  }
-
-  #loc-list {
-    float: left;
-    height: 530px;
-    overflow: auto;
-    width: 240px;
-
-    ul {
-      clear: left;
-      display: block;
-      float: left;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        border: 1px solid #fff;
-        clear: left;
-        cursor: pointer;
-        display: block;
-        float: left;
-        margin: 6px 10px;
-        width: 200px;
-      }
-    }
-
-    .list-label {
-      background: #451400;
-      color: #fff;
-      float: left;
-      font-weight: bold;
-      margin: 10px 0 0 6px;
-      padding: 2px 3px;
-      text-align: center;
-      width: 17px;
-    }
-
-    .list-details {
-      float: left;
-      margin-left: 6px;
-      width: 165px;
-
-      .list-content {
-        padding: 10px;
-      }
-
-      .loc-dist {
-        color: #8e8e8e;
-        font-style: italic;
-        font-weight: bold;
-      }
-    }
-
-    .list-focus {
-      -moz-box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
-      -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
-      border: 1px solid rgba(82, 168, 236, 0.9);
-      box-shadow: 0 0 8px rgba(82, 168, 236, 0.7);
-      transition: border 0.2s linear 0s,box-shadow 0.2s linear 0s;
-    }
-  }
-
-  .loc-name {
-    color: #AD2118;
-    font-weight: bold;
-  }
-
-  #search-form {
-    clear: left;
-    float: left;
-    height: 60px;
-  }
-
-  #form-input {
-    float: left;
-    margin-top: 3px;
-
-    label {
-      font-weight: bold;
-    }
-
-    input {
-      border: 1px solid #ccc;
-      line-height: 16px;
-      padding: 4px;
-    }
-  }
-
-  #address {
-    margin: 0 0 0 10px;
-  }
-
-  #submit {
-    -webkit-border-radius: 4px;
-    background: #ae2118;
-    border-radius: 4px;
-    border: 1px solid #961f17;
-    color: #fff;
-    cursor: pointer;
-    float: left;
-    margin: 3px 0 0 10px;
-    padding: 3px 6px;
-  }
-
-  #loading-map {
-    background: asset-url('images/jquerystorelocator/ajax-loader.gif') no-repeat;
-    float: left;
-    height: 16px;
-    margin: 4px 0 0 10px;
-    width: 16px;
-  }
-
-  #map {
-    float: left;
-    height: 530px;
-    width: 635px;
-  }
-}
-
 /* Infowindow Roboto font override */
-
-.gm-style {
-  div, span, label, a {
-    font-family: Arial,Helvetica,sans-serif;
-  }
+.gm-style div,
+.gm-style span,
+.gm-style label,
+.gm-style a {
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Modal window */
-
-#overlay {
-  background: asset-url('images/jquerystorelocator/overlay-bg.png') repeat;
-  height: 100%;
-  left: 0px;
-  position: fixed;
-  top: 0px;
+.bh-sl-error {
+  clear: both;
+  float: left;
   width: 100%;
-  z-index: 10000;
-
-  #modal-window {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #656565;
-    height: 590px;
-    left: 50%;
-    margin-left: -460px;
-    margin-top: 60px;
-    position: absolute;
-    width: 920px;
-    z-index: 10010;
-
-    #modal-content {
-      float: left;
-      padding: 0 22px;
-    }
-
-    #close-icon {
-      background: #2c2c2c asset-url('images/jquerystorelocator/close-icon.png') 3px 3px no-repeat;
-      border-radius: 3px;
-      border: 1px solid #000;
-      box-shadow: 0 0 3px #656565;
-      cursor: pointer;
-      height: 18px;
-      position: absolute;
-      right: -6px;
-      top: -6px;
-      width: 18px;
-    }
-  }
+  padding: 10px 0;
+  color: #ae2118;
+  font-weight: bold;
 }
-
+.bh-sl-container {
+  color: #333333;
+  /* Avoid image issues with Google Maps and CSS resets */
+  /* Avoid issues with Google Maps and CSS frameworks */
+}
+.bh-sl-container img {
+  max-width: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.bh-sl-container > * {
+  box-sizing: content-box !important;
+}
+.bh-sl-container .jumbotron {
+  padding-top: 30px;
+}
+.bh-sl-container .form-input input,
+.bh-sl-container .form-input select,
+.bh-sl-container .form-input label {
+  margin-right: 10px;
+}
+.bh-sl-container .bh-sl-loading {
+  float: left;
+  margin: 4px 0 0 10px;
+  width: 16px;
+  height: 16px;
+  background: url(../img/ajax-loader.gif) no-repeat;
+}
+.bh-sl-container .bh-sl-filters-container {
+  clear: both;
+  width: 100%;
+  margin: 15px 0;
+}
+.bh-sl-container .bh-sl-filters-container .bh-sl-filters {
+  list-style: none;
+  float: left;
+  padding: 0;
+  margin: 0 100px 0 0;
+}
+.bh-sl-container .bh-sl-filters-container .bh-sl-filters li {
+  display: block;
+  clear: left;
+  float: left;
+  width: 100%;
+  margin: 5px 0;
+}
+.bh-sl-container .bh-sl-filters-container .bh-sl-filters li label {
+  display: inline;
+}
+.bh-sl-container .bh-sl-filters-container .bh-sl-filters li input {
+  display: block;
+  float: left;
+  margin: 2px 8px 2px 0;
+}
+.bh-sl-container .bh-sl-map-container {
+  margin-top: 27px;
+}
+.bh-sl-container .bh-sl-map-container a {
+  color: #005293;
+  text-decoration: none;
+}
+.bh-sl-container .bh-sl-map-container a:hover,
+.bh-sl-container .bh-sl-map-container a:active {
+  text-decoration: underline;
+}
+.bh-sl-container .bh-sl-loc-list {
+  height: 530px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+.bh-sl-container .bh-sl-loc-list ul {
+  display: block;
+  clear: left;
+  float: left;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bh-sl-container .bh-sl-loc-list ul li {
+  display: block;
+  clear: left;
+  float: left;
+  margin: 3% 4%;
+  cursor: pointer;
+  width: 92%;
+  border: 1px solid #ffffff;
+  /* Adding this to prevent moving li elements when adding the list-focus class*/
+}
+.bh-sl-container .bh-sl-loc-list .list-label {
+  float: left;
+  margin: 10px 0 0 6px;
+  padding: 4px;
+  width: 27px;
+  text-align: center;
+  background: #00192d;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.bh-sl-container .bh-sl-loc-list .list-details {
+  float: left;
+  margin-left: 6px;
+  width: 80%;
+}
+.bh-sl-container .bh-sl-loc-list .list-details .list-content {
+  padding: 10px;
+}
+.bh-sl-container .bh-sl-loc-list .list-details .loc-dist {
+  font-weight: bold;
+  font-style: italic;
+  color: #8e8e8e;
+}
+.bh-sl-container .bh-sl-loc-list .list-focus {
+  border: 1px solid rgba(0, 82, 147, 0.4);
+  -moz-box-shadow: 0 0 8px rgba(0, 82, 147, 0.4);
+  -webkit-box-shadow: 0 0 8px rgba(0, 82, 147, 0.4);
+  box-shadow: 0 0 8px rgba(0, 100, 180, 0.4);
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.bh-sl-container .bh-sl-loc-list .bh-sl-close-directions-container {
+  width: 100%;
+  height: 20px;
+  position: relative;
+}
+.bh-sl-container .bh-sl-loc-list .bh-sl-close-directions-container .bh-sl-close-icon {
+  top: 0;
+  right: 6px;
+}
+.bh-sl-container .bh-sl-loc-list .bh-sl-noresults-title {
+  font-weight: bold;
+}
+.bh-sl-container .loc-name {
+  /* Picked up by both list and infowindows */
+  font-size: 15px;
+  font-weight: bold;
+}
+.bh-sl-container .bh-sl-map {
+  height: 530px;
+}
+.bh-sl-container .bh-sl-pagination-container {
+  clear: both;
+}
+.bh-sl-container .bh-sl-pagination-container ol {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+.bh-sl-container .bh-sl-pagination-container ol li {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica, sans-serif;
+  color: #005293;
+}
+.bh-sl-container .bh-sl-pagination-container ol .bh-sl-current {
+  color: #333333;
+  cursor: auto;
+  text-decoration: none;
+}
+/* Modal window */
+.bh-sl-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: asset-url('images/jquerystorelocator/overlay-bg.png') repeat;
+}
+.bh-sl-overlay .bh-sl-modal-window {
+  position: absolute;
+  left: 50%;
+  margin-left: -460px;
+  /* width divided by 2 */
+  margin-top: 60px;
+  width: 920px;
+  height: 620px;
+  z-index: 10010;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #656565;
+}
+.bh-sl-overlay .bh-sl-modal-window .bh-sl-map-container {
+  margin-top: 50px;
+  /* increase map container margin */
+}
+.bh-sl-overlay .bh-sl-modal-window .bh-sl-modal-content {
+  float: left;
+  padding: 0 22px;
+  /* there's already a margin on the top of the map-container div */
+}
+.bh-sl-overlay .bh-sl-modal-window .bh-sl-close-icon {
+  top: 13px;
+  right: 22px;
+}
+.bh-sl-close-icon {
+  position: absolute;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.bh-sl-close-icon:after,
+.bh-sl-close-icon:before {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 0;
+  left: 50%;
+  background: #cccccc;
+  content: '';
+  display: block;
+  height: 24px;
+  margin: -3px 0 0 -1px;
+  width: 3px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.bh-sl-close-icon:hover:after,
+.bh-sl-close-icon:hover:before {
+  background: #b3b3b3;
+}
+.bh-sl-close-icon:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}

@@ -1,0 +1,38 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:
+    attributes:
+      spree/store_locator:
+        name: Nombre
+        address1: Dirección
+        address2: Dirección (cont.)
+        city: Ciudad
+        country: Pais
+        firstname: Nombre
+        lastname: Apellidos
+        phone: Teléfono
+        state: Provincia o Estado
+        zipcode: Código Postal
+        website: Página web
+  spree:
+    actions:
+      submit: Enviar
+    address_error_alert: "No es posible encontrar dirección"
+    directions: Direcciones
+    distance_error_alert: "La ubicación mas cercana está a "
+    enter_address: Ingrese dirección
+    kilometer: Kilometro
+    kilometers: Kilometros
+    mile: Milla
+    miles: Millas
+    next: "&rsaquo;"
+    no_results: Sin resultados
+    our_stores: Nuestras Tiendas
+    prev: "&lsaquo;"
+    store_locator:
+      title: Tiendas Fisicas
+      menu: Tiendas Fisicas
+      new: Nueva Tienda
+      deleted: Tienda borrada exitosamente
