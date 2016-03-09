@@ -3,6 +3,7 @@
 
 en:
   spree:
+    kilometers: kilometers
     store_locator:
       title: Store Locators
       menu: Store Locators

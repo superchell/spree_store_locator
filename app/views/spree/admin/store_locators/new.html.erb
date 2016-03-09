@@ -2,10 +2,6 @@
   <%= Spree.t(:'store_locator.new') %>
 <% end %>
 
-<div data-hook="admin_user_new_form_header">
-  <%= render :partial => 'spree/admin/shared/error_messages', :locals => { :target => @store_locator } %>
-</div>
-
 <%= form_for @store_locator, url: admin_store_locators_path do |f| %>
   <fieldset>
     <%= render partial: 'form', locals: { f: f } %>
