@@ -14,8 +14,13 @@ es:
         lastname: Apellidos
         phone: Teléfono
         state: Provincia o Estado
+        store: Tienda
         zipcode: Código Postal
         website: Página web
+    models:
+      spree/store_locator:
+        one: Tienda Física
+        other: Tiendas Físicas
   spree:
     actions:
       submit: Enviar
@@ -25,14 +30,16 @@ es:
     enter_address: Ingrese dirección
     kilometer: Kilometro
     kilometers: Kilometros
+    listing_store_locators: Lista de Tiendas Físicas
     mile: Milla
     miles: Millas
+    new_store_locator: Nueva Tienda Física
     next: "&rsaquo;"
     no_results: Sin resultados
     our_stores: Nuestras Tiendas
     prev: "&lsaquo;"
     store_locator:
-      title: Tiendas Fisicas
-      menu: Tiendas Fisicas
+      title: Tiendas Físicas
+      menu: Tiendas Físicas
       new: Nueva Tienda
       deleted: Tienda borrada exitosamente
