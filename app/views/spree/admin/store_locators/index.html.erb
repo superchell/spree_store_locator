@@ -1,14 +1,79 @@
-<%= form_for @store_locator, url: admin_store_locators_path do |f| %>
-  <fieldset>
-    <legend align="center">New Store</legend>
-    <%= render partial: 'form', locals: { f: f } %>
-    <%= f.submit %>
-  </fieldset>
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_store_locators) %>
 <% end %>
-<%= paginate @store_locators %>
-<% if @store_locators.present? %>
-  <%= render partial: 'store_locators' %>
+
+<% content_for :page_actions do %>
+  <li id="new_store_locator_link">
+    <%= button_link_to Spree.t(:new_store_locator), new_object_url, { :remote => false, :icon => 'icon-plus', :id => 'admin_new_store_locator' } %>
+  </li>
+<% end %>
+
+<% content_for :table_filter_title do %>
+  <%= Spree.t(:search) %>
+<% end %>
+
+<% content_for :table_filter do %>
+  <div data-hook="admin_store_locators_sidebar">
+
+    <%= search_form_for [:admin, @search] do |f| %>
+
+        <%- locals = {:f => f} %>
+
+        <div data-hook="admin_store_locators_index_search">
+          <div class="three columns">
+            <div class="field">
+              <%= f.label :name_cont, I18n.t(:name, scope: 'activerecord.attributes.spree/store_locator') %>
+              <%= f.text_field :name_cont %>
+            </div>
+          </div>
+          <div class="three columns">
+            <div class="field">
+              <%= f.label :city_cont, I18n.t(:city, scope: 'activerecord.attributes.spree/store_locator') %>
+              <%= f.text_field :city_cont %>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="form-buttons actions filter-actions" data-hook="admin_store_locators_index_search_buttons">
+          <%= button Spree.t(:search), 'icon-search' %>
+        </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= paginate @collection %>
+
+<% if @collection.any? %>
+  <table class="index" id="listing_store_locator">
+    <thead>
+      <tr data-hook="admin_store_locator_index_headers">
+        <th><%= I18n.t(:name, scope: 'activerecord.attributes.spree/store_locator') %></th>
+        <th><%= I18n.t(:city, scope: 'activerecord.attributes.spree/store_locator') %></th>
+        <th><%= I18n.t(:store, scope: 'activerecord.attributes.spree/store_locator') %></th>
+        <th data-hook="admin_store_locators_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collection.each do |store_locator| %>
+          <tr id="<%= spree_dom_id store_locator %>" data-hook="admin_store_locator_index_rows" class="<%= cycle('odd', 'even') %>">
+            <td class="align-center"><%= store_locator.name %></td>
+            <td class="align-center"><%= store_locator.city %></td>
+            <td class="actions" data-hook="admin_store_locators_index_row_actions">
+              <%= link_to_edit store_locator, :no_text => true, :class => 'edit' if can?(:edit, store_locator) %>
+              &nbsp;
+              <%= link_to_delete store_locator, :no_text => true if can?(:delete, store_locator) %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
-  <div class="no-objects-found">No Stores found!</div>
+  <div class="alpha twelve columns no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/store_locator')) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_store_locator_path %>!
+  </div>
 <% end %>
-<%= paginate @store_locators %>
+
+<%= paginate @collection %>
