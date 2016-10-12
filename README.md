@@ -14,7 +14,7 @@ Installation
 Add spree_store_locator to your Gemfile:
 
 ```ruby
-gem 'spree_store_locator',  github: 'NoelDiazMesa/spree_store_locator' , branch: 'master'
+gem 'spree_store_locator',  github: 'ronzalo/spree_store_locator' , branch: '3-0-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
