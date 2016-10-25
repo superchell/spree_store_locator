@@ -5,6 +5,7 @@ class Spree::StoreLocator < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   has_attached_file :image, styles: { large: "500x500>", medium: "200x200>", thumb: "100x100>" }
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   validates :address1, :city, :country, :state, presence: true
 
