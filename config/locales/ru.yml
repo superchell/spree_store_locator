@@ -1,0 +1,38 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  activerecord:
+    attributes:
+      spree/store_locator:
+        name: Название
+        address1: Адрес
+        address2: Дополнительный адрес
+        city: Город
+        country: Страна
+        firstname: Имя
+        lastname: Фамилия
+        phone: Телефон
+        state: Область
+        zipcode: Индекс
+        website: Сайт
+  spree:
+    actions:
+      submit: Сохранить
+    address_error_alert: "Направление не найдено"
+    directions: Как проехать
+    distance_error_alert: "Ближайшее расположение "
+    enter_address: Ваше местоположение
+    kilometer: км
+    kilometers: км
+    mile: Миля
+    miles: Миль
+    next: "&rsaquo;"
+    no_results: Ничего не найдено
+    our_stores: Наши магазины
+    prev: "&lsaquo;"
+    store_locator:
+      title: Магазины
+      menu: Адреса магазинов
+      new: Новый магазин
+      deleted: Магазин успешно удален
