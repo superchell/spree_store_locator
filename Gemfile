@@ -6,7 +6,7 @@ gem 'jbuilder'
 gem 'pry', group: [:development, :test]
 gem 'sass-rails', '4.0.3'
 gem 'sprockets', '<= 2.11.0'
-gem 'spree', :github => 'spree/spree', :branch => '3-1-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '3-1-stable'
+gem 'spree', '~> 3.3.0.rc1'
+gem 'spree_auth_devise', '~> 3.3'
 gemspec
 
